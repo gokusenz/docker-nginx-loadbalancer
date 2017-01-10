@@ -4,8 +4,7 @@ RUN apk update \
     && apk upgrade \
     && apk add --no-cache bash tzdata \
     && adduser -D -H -u 1000 -s /bin/bash www-data \
-    && rm /etc/nginx/conf.d/default.conf \
-    && rm /var/log/nginx/*
+    && rm /etc/nginx/conf.d/default.conf
 
 ADD html/ /usr/share/nginx/html/
 ADD sites-enabled/ /etc/nginx/sites-enabled/
